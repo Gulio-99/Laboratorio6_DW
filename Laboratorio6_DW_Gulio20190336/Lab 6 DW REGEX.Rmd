@@ -1,0 +1,71 @@
+---
+title: "Laboratorio 6"
+author: "Gulio Valenzuela"
+date: "10/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stringr)
+```
+
+## Ejercicio 1
+
+```{r}
+placas <- c('P365GRL','P452BQQ','P043JVB','M543DDF','P238HJÑ', 'P078AGR','PDFR786','P3424GH')
+
+str_detect(placas, '^[P]{1}[0-9]{3}(?![AEIOUÑ])[A-Z]{3}$')
+
+```
+
+## Ejercicio 2
+
+```{r}
+archivos <- c('Ejemplo1.pdf', 'prueba2.PDF', 'respuestas_del_examen.jpg', 'amor.JPG', 'Este_No.doc')
+str_extract(archivos,'[.](jpg|JPG|pdf|PDF)$')
+```
+
+## Ejercicio 3
+
+```{r}
+contraseñas <- c('Guli1299$','chechA!!!','dAnIelArturO?','yoyopo7654$','Duyh87')
+str_detect(contraseñas, '^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$')
+```
+
+## Ejercicio 5
+
+```{r}
+palabras <- c('pit', 'spot', 'spate', 'slap two', 'respite', 'pt', 'Pot', 'peat', 'part')
+
+str_extract(palabras,'.*p.t.*')
+```
+
+## Ejercicio 7
+
+```{r}
+correos <- c('robertolacayo@ufm.edu', 'robertolacayo@gmail.com', 'daniellopez@ufm.edu', 'guliovale@ufm.edu')
+str_extract(correos, '[A-Za-z]+@[ufm]+.(edu)$')
+```
+
+## Ejercicio 8 
+
+```{r}
+id_eurasia <- c('abc012333ABCDEEEE', 'df095777DRTE', '45768GHJK', 'abcd567444YUTR')
+str_detect(id_eurasia,'^[a-z]{0,3}[0-9]{2,9}[A-Z]{2,}$')
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
